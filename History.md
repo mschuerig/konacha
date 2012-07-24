@@ -1,8 +1,28 @@
 # master
 
+* Update chai (1.1.1)
+* Improved error messaging (rake konacha:run)
+* Show pending specs in `konacha:run` output
+
+# 1.4.1
+
+* Fix performance regression in projects which have many assets
+
+# 1.4.0
+
+* Update mocha (1.3.0)
+* Support all Mocha interfaces (set through `Konacha.mochaOptions.ui`)
+* Backup spec files (.js.bak, .js.orig, etc.) are ignored
+
+# 1.3.1
+
+* Specs in subdirectories no longer run twice
+
+# 1.3.0
+
 * `rake konacha:run` exits with exit code 1 when spec suite fails
 * Add SPEC environment variable for running individual spec files
-* Update mocha (1.2.0)
+* Update mocha (1.2.1) and chai (1.1.0)
 
 # 1.2.4
 
