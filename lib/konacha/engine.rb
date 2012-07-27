@@ -23,11 +23,14 @@ module Konacha
 
       options = app.config.konacha
 
-      options.spec_dir        ||= "spec/javascripts"
-      options.port            ||= 3500
-      options.application     ||= self.class.application(app)
-      options.driver          ||= :selenium
-      options.backup_pattern  ||= /.+(\.bak|\.orig|~)$/
+      options.spec_dir    ||= "spec/javascripts"
+      options.port        ||= 3500
+      options.application ||= self.class.application(app)
+      options.driver      ||= :selenium
+
+      if options.xunit_reports == true
+        options.xunit_reports = File.join(options.spec_dir, 'reports')
+      end
 
       app.config.assets.paths << app.root.join(options.spec_dir).to_s
     end

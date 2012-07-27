@@ -27,7 +27,7 @@ module Konacha
       yield config
     end
 
-    delegate :port, :spec_dir, :application, :driver, :to => :config
+    delegate :port, :spec_dir, :application, :driver, :xunit_reports, :to => :config
 
     def spec_root
       File.join(Rails.root, config.spec_dir)
