@@ -228,8 +228,6 @@ module Konacha
 
     def to_xml(xml = nil)
       xml ||= Builder::XmlMarkup.new(:indent => 2)
-      #<testcase name="Dpxyz::ResourceMapper::Resource::EntityAdapter when created from an entity delegates attributes to its entity" time="0.005">
-      #</testcase>
       xml.testcase(:classname => classname, :name => title, :time => duration.to_f / 1000) do |xml|
         if failed?
           xml.failure(:message => short_message) do |xml|
